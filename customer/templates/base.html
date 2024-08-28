@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+        <header>
+            <nav class="bg-blue-800 p-4">
+                <a href="/home/"  class="text-white hover:bg-blue-700 px-3 py-2 rounded">Home</a>
+                <a href="/add_product/"  class="text-white hover:bg-red-700 px-3 py-2 rounded">Add Product</a>
+                <a href="/receipts/"  class="text-white hover:bg-red-700 px-3 py-2 rounded">Receipts</a>
+                <a href="/invoice/" class="text-white hover:bg-red-700 px-3 py-2 rounded">Invoice</a>
+            </nav>
+        </header>
+        {% block content %}
+            
+        {% endblock %}
+
+        <footer class="bg-gray-800 text-white py-6 mt-10">
+            <div class="container mx-auto text-center">
+                <p>&copy; 2024 Yo Canteen. All rights reserved.</p>
+                <h6>Designed by [Your Name]</h6>
+            </div>
+        </footer>
+    
+</body>
+</html>

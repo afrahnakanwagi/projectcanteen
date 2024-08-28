@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body{
+            background-image: url("{% static 'images/index.png' %}");
+            background-size: cover;
+            
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <button type="submit" class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500" style="float: right;"><a href="/home/">LOGIN</a></button>
+    
+
+</body>
+</html>

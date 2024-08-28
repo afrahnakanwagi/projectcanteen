@@ -1,0 +1,40 @@
+<div class="overflow-x-auto">
+    <table class="table-auto w-full bg-white rounded-lg shadow-lg overflow-hidden">
+        <thead class="bg-blue-500 text-white">
+            <tr>
+                <th class="px-4 py-2">#</th>
+                <th class="px-4 py-2">Name</th>
+                <th class="px-4 py-2">Image</th>
+                <th class="px-4 py-2">Price</th>
+                <th class="px-4 py-2">Description</th>
+                <th class="px-4 py-2">Quantity</th>
+                <th class="px-4 py-2">Category</th>
+                <th class="px-4 py-2">Brand</th>
+                <th class="px-4 py-2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for each in allproducts %}
+            <tr class="border-b hover:bg-gray-100">
+                <td class="px-4 py-2 text-center">{{ each.id }}</td>
+                <td class="px-4 py-2">{{ each.name }}</td>
+                <td class="px-4 py-2">
+                    <img src="{{ each.image }}" alt="{{ each.name }}" class="w-16 h-16 object-cover rounded">
+                </td>
+                <td class="px-4 py-2">UGX{{ each.price }}</td>
+                <td class="px-4 py-2">{{ each.description }}</td>
+                <td class="px-4 py-2">{{ each.quantity }}</td>
+                <td class="px-4 py-2">{{ each.category }}</td>
+                <td class="px-4 py-2">{{ each.brand }}</td>
+                <td class="py-2 px-4">
+                    <a href="/view_product/{{ each.id }}/"
+                        class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">View</a>
+                    <a href="/edit_product/{{ each.id }}/"
+                        class="text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded ml-2">Edit</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>

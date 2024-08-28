@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container mx-auto px-4 py-8">
+    
+        <button type="submit">
+            <a href="/" class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500" style="float: left;">Back</a>
+        </button>
+
+        <section>
+            <h1 class="text-3xl font-bold mb-6 text-center">All Products</h1>
+        </section>
+
+        <div class="grid grid-cols-5 gap-4">
+            {% for each in allproducts %}
+            <a href="/view_product/{{ each.id }}/" class="block p-4 border border-gray-200 rounded-lg hover:shadow-lg">
+                <img src="/static/images/{{ each.image }}" alt="{{ each.name }}" class="w-full h-32 object-cover rounded">
+                <p class="mt-2 font-semibold">{{ each.name }}</p>
+                <p class="text-gray-700">UGX {{ each.price }}</p>
+                <p class="text-gray-500">Quantity: {{ each.quantity }}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% endblock %}

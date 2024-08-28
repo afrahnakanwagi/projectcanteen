@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+
+<button type="submit"><a href="/home/" class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500" style="float: left;">Back</a></button>
+
+<div class="text-center">
+    <h1 class="text-4xl font-bold mt-6 uppercase">Invoice</h1>
+</div>
+<form action="." method="POST">
+    {% csrf_token %}
+  
+    <div class="mt-8 mx-4">
+        <table class="table-auto w-full border-collapse">
+            <thead>
+                <tr class="bg-gray-200 text-gray-700">
+                    <th class="px-4 py-2 text-left">Buyer's Name</th>
+                    <th class="px-4 py-2 text-left">Buyer's Contact</th>
+                    <th class="px-4 py-2 text-left">Particular</th>
+                    <th class="px-4 py-2 text-left">Quantity</th>
+                    <th class="px-4 py-2 text-left">Amount</th>
+                    <th class="px-4 py-2 text-left">Seller</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-900">
+                <tr class="border-b">
+                    <td class="px-4 py-2">
+                        <label for="buyer_name" class="block"></label>
+                        <input type="text" name="buyer_name" id="buyer_name" value="Afrah"
+                            class="w-full p-2 border border-gray-300 rounded-md"><br>
+                    </td>
+                    <td class="px-4 py-2">
+                        <label for="buyer_contact" class="block"></label>
+                        <input type="tel" name="buyer_contact" id="buyer_contact" value="0754433456"
+                            class="w-full p-2 border border-gray-300 rounded-md"><br>
+                    </td>
+                    <td class="px-4 py-2">
+                        <label for="particular_laptop" class="block"></label>
+                        <input type="text" name="particular_laptop" id="particular_laptop" value="Laptop"
+                            class="w-full p-2 border border-gray-300 rounded-md">
+                    </td>
+                    <td class="px-4 py-2">
+                        <label for="quantity_laptop" class="block"></label>
+                        <input type="number" name="quantity_laptop" id="quantity_laptop" value="1"
+                            class="w-full p-2 border border-gray-300 rounded-md">
+                    </td>
+                    <td class="px-4 py-2">
+                        <label for="amount_laptop" class="block"></label>
+                        <input type="number" name="amount_laptop" id="amount_laptop" value="3000000"
+                            class="w-full p-2 border border-gray-300 rounded-md">
+                    </td>
+                    <td class="px-4 py-2">
+                        <label for="seller_name" class="block"></label>
+                        <input type="text" name="seller_name" id="seller_name" value="Seller Name"
+                            class="w-full p-2 border border-gray-300 rounded-md">
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <hr>
+        <div class="row">
+            <div class="col-xl-8" style="margin-left: 60px;">
+                <p class="float-center" style="font-size: 30px; color: red; font-weight: 400px;"> <label
+                        for="total_amount">Total: <span><i class="fas fa-Uganda_shillings-sign"></i></span></p></label>
+                <input type="number" name="total_amount" id="total_amount"
+                    class="w-full p-2 border border-gray-300 rounded-md">
+            </div>
+        </div>
+        <br>
+        <div class="mt-6 flex justify-end">
+            <button type="submit"
+                class="bg-blue-600 w-full text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Generate</button>
+        </div>
+</form>
+
+<div class="row mt-2 mb-5 border-b">
+    <label for="date" class="fw-bold">Date: </label><br>
+    <input type="datetime-local" name="date" class="w-full p-2 border border-gray-300 rounded-md" required>
+    <p class="fw-bold mt-3">Signature</p>
+</div>
+
+
+</div>
+
+
+
+{% endblock %}
